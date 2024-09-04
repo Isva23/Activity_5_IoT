@@ -1,0 +1,95 @@
+/* Estilo general */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #0E0E11; /* Fondo oscuro */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Contenedor centrado */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinea todos los elementos al centro */
+    background-color: #18181B; /* Fondo de la tarjeta */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Título */
+.title {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Imagen del LED */
+.led-image {
+    width: 100px;
+    margin-bottom: 20px; /* Añade espacio debajo de la imagen */
+}
+
+/* Estilo del interruptor */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 20px 0; /* Espacio vertical entre la imagen y el switch */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Estilo del texto del estado */
+.status-text {
+    display: block;
+    margin-top: 20px; /* Añade espacio encima del texto */
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    transition: color 0.5s ease-in-out; /* Transición del color */
+}
+.status-text.on {
+    color: #8EC9FF; /* Azul brillante tipo LED */
+    text-shadow: 0 0 8px #8EC9FF; /* Efecto de brillo */
+}
